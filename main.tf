@@ -20,7 +20,7 @@ data "aws_ami" "ubuntu" {
 
 # Generate a tfvars file for AS3 installation
 data "template_file" "tfvars" {
-  template = file("../as3/terraform.tfvars.example")
+  template = file("./as3/terraform.tfvars.example")
   vars = {
     addr     = module.bigip.0.mgmtPublicIP[0]
     port     = "8443"
@@ -29,7 +29,7 @@ data "template_file" "tfvars" {
   }
 }
 data "template_file" "nia" {
-  template = file("../nia/config.hcl.example")
+  template = file("../3-F5-NIA-SETUP/nia/config.hcl.example")
   vars = {
     addr     = module.bigip.0.mgmtPublicIP[0]
     port     = "8443"
