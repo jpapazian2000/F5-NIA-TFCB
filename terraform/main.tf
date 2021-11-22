@@ -29,7 +29,7 @@ data "template_file" "tfvars" {
   }
 }
 data "template_file" "nia" {
-  template = file("../nia/config.hcl.example")
+  template = file("./nia/config.hcl.example")
   vars = {
     addr     = module.bigip.0.mgmtPublicIP[0]
     port     = "8443"
