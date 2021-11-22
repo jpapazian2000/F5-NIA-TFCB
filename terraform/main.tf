@@ -40,26 +40,26 @@ data "template_file" "nia" {
 }
 resource "local_file" "nia-config" {
   content  = data.template_file.nia.rendered
-  filename = "../nia/config.hcl"
+  filename = "./nia/config.hcl"
 }
 
 resource "local_file" "tfvars-as3" {
   content  = data.template_file.tfvars.rendered
-  filename = "../as3/terraform.tfvars"
+  filename = "./as3/terraform.tfvars"
 }
 
 resource "local_file" "tfvars-fast" {
   content  = data.template_file.tfvars.rendered
-  filename = "../fast/terraform.tfvars"
+  filename = "./fast/terraform.tfvars"
 }
 
 # Generate a tfvars file for "brownfield-approach" installation
-resource "local_file" "tfvars-b1" {
-  content  = data.template_file.tfvars.rendered
-  filename = "../brownfield-approach/1-f5-brownfield-install-terraform/terraform.tfvars"
-}
+#resource "local_file" "tfvars-b1" {
+#  content  = data.template_file.tfvars.rendered
+#  filename = "../brownfield-approach/1-f5-brownfield-install-terraform/terraform.tfvars"
+#}
 
-resource "local_file" "tfvars-b2" {
-  content  = data.template_file.tfvars.rendered
-  filename = "../brownfield-approach/2-as3-shared-pool/terraform.tfvars"
-}
+#resource "local_file" "tfvars-b2" {
+#  content  = data.template_file.tfvars.rendered
+#  filename = "../brownfield-approach/2-as3-shared-pool/terraform.tfvars"
+#}
