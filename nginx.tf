@@ -2,7 +2,7 @@ resource "aws_autoscaling_group" "nginx" {
   name                 = "${var.prefix}-nginx-asg"
   launch_configuration = aws_launch_configuration.nginx.name
   desired_capacity     = 2
-  min_size             = 1
+  min_size             = var.nginx_servers
   max_size             = 4
   vpc_zone_identifier  = [module.vpc.public_subnets[0]]
 
