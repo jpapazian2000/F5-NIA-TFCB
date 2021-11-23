@@ -29,7 +29,7 @@ variable "nginx_servers" {
    validation {
      condition  = (
       var.nginx_servers >= 1 &&
-      var.nginx_servers <+ 4
+      var.nginx_servers <= 4
       )
      error_message = "The number of nginx servers must be an integer between 1 and 4"
   }
