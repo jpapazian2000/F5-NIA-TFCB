@@ -31,5 +31,5 @@ output "aws_security_group_id" {
 }
 
 output "iam_instance_profile_name" {
- value = aws_iam_insance_profile.consul.name
+ value = aws_iam_instance_profile.consul.name
 }
