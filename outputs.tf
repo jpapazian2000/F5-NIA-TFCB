@@ -26,3 +26,10 @@ output "vpc_zone_identifier" {
   value = [module.vpc.public_subnets[0]]
 }
 
+output "aws_security_group_id" {
+  value = [aws_security_group.nginx.id]
+}
+
+output "iam_instance_profile_name" {
+ value = aws_iam_insance_profile.consul.name
+}
